@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite-deck-gnome:42.20250421
+FROM ghcr.io/ublue-os/bazzite-deck-gnome:42.20250425
 
 RUN dnf install -y \
     cockpit \
