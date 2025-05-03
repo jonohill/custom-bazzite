@@ -4,8 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=kopia server start --insecure
-EnvironmentFile=/etc/kopia/kopia.env
+ExecStart=kopia server start --insecure --without-password --log-dir=/var/log/kopia
 Restart=on-failure
 User=root
 
