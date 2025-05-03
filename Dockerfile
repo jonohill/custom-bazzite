@@ -1,13 +1,10 @@
 FROM ghcr.io/ublue-os/bazzite-deck-gnome:42.20250501
 
-RUN dnf install -y \
-    cockpit \
-    cockpit-machines \
-    libvirtd \
-    tailscale 
+COPY root/ /
 
-RUN systemctl --root=/ enable cockpit.socket && \
-    systemctl --root=/ enable libvirtd && \
-    systemctl --root=/ enable tailscaled
+RUN rpm --import https://kopia.io/signing-key && \
+    dnf install -y kopia
+
+RUN systemctl --root=/ enable kopia
 
 RUN ostree container commit

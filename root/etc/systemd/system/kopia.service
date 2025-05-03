@@ -1,0 +1,13 @@
+[Unit]
+Description=kopia
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=kopia server start
+EnvironmentFile=/etc/kopia/kopia.env
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target
