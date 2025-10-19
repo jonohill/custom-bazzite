@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite-deck-gnome:42.20251011
+FROM ghcr.io/ublue-os/bazzite-deck-gnome:42.20251018
 
 COPY root/ /
 
