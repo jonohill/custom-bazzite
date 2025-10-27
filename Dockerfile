@@ -6,10 +6,12 @@ RUN rpm --import https://kopia.io/signing-key && \
     dnf install -y \
         cockpit \
         cockpit-machines \
+        docker \
         kopia \
         rclone
 
 RUN systemctl --root=/ enable cockpit.socket && \
+    systemctl --root=/ enable docker && \
     systemctl --root=/ enable kopia
 
 RUN ostree container commit
